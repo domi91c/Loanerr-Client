@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import './App.css'
 import Navigation from './components/Navigation'
 import {
-  Button, Card, CardBody, CardImg, CardSubtitle, CardText,
-  CardTitle, Col, Container, Row,
+  Button, Card, CardBody, CardHeader, CardImg, CardSubtitle, CardText,
+  CardTitle, Col, Container, Form, FormGroup, FormText, Input, Label, Row,
 } from 'reactstrap'
 
 class App extends Component {
@@ -12,20 +12,34 @@ class App extends Component {
         <div>
           <Navigation/>
           <br/>
-          <Container className="container">
+          <Container>
             <Row>
-              <Col xs={4}>
+              <Col xs={6} className="mx-auto">
                 <Card>
-                  <CardImg top width="100%"
-                           src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                           alt="Card image cap"/>
+                  <CardHeader>
+                    <CardTitle>Sign in</CardTitle>
+                  </CardHeader>
                   <CardBody>
-                    <CardTitle>Card title</CardTitle>
-                    <CardSubtitle>Card subtitle</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title
-                      and
-                      make up the bulk of the card's content.</CardText>
-                    <Button>Button</Button>
+                    <Form>
+                      <FormGroup>
+                        <Label for="exampleEmail">Email</Label>
+                        <Input type="email" name="email" id="exampleEmail"
+                               placeholder="with a placeholder"/>
+                      </FormGroup>
+                      <FormGroup>
+                        <Label for="examplePassword">Password</Label>
+                        <Input type="password" name="password"
+                               id="examplePassword"
+                               placeholder="password placeholder"/>
+                      </FormGroup>
+                      <FormGroup check>
+                        <Label check>
+                          <Input type="checkbox"/>{' '}
+                          Remember me
+                        </Label>
+                      </FormGroup>
+                      <Button>Submit</Button>
+                    </Form>
                   </CardBody>
                 </Card>
               </Col>
